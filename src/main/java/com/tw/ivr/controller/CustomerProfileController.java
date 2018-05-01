@@ -1,21 +1,32 @@
 package com.tw.ivr.controller;
 
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.voxeo.tropo.Tropo;
+
 @Controller
 public class CustomerProfileController {
 
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	@ResponseBody
-	public Object sendSMSSessionLink(@RequestParam(value = "phoneNumber", required = true) Long phoneNumber) {
+	public Object sendSMSSessionLink() {
 		return "hello";
 	}
-		
+	
+	@RequestMapping(value = "/ivr", method = RequestMethod.GET)
+	@ResponseBody
+	public void ivr(HttpServletResponse response) {
+		Tropo tropo = new Tropo();
+		tropo.say("Hello, How are you.","hello");
+		tropo.render(response);
+	}
 		
 	
 	/*@Autowired

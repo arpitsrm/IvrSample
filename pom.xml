@@ -41,7 +41,21 @@
 			<artifactId>json</artifactId>
 			<version>20140107</version>
 		</dependency>
-
+ <dependency>
+    <groupId>com.voxeo.tropo</groupId>
+    <artifactId>tropo-webapi-java</artifactId>
+    <version>15.8.0</version>
+  </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.2</version>
+    </dependency>
 
 		<!-- OAuth 2.0 dependencies -->
 		<dependency>
